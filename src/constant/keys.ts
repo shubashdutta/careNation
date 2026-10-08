@@ -1,0 +1,27 @@
+export const KEYS = {
+  login: "login",
+  products: "products",
+  users: "users",
+  categories: "categories",
+  orders: "orders",
+  brands: "brands",
+  warehouses: "warehouses",
+  roles: "roles",
+  attributes: "attributes",
+  vendors: "vendors",
+  customers: "customers",
+  suppliers: "suppliers",
+  campaigns: "campaigns",
+  homeSection: "homeSection",
+  settings: "settings",
+  about: "about",
+  media: "media",
+  campaignProduct: "campaignProduct",
+  account: "account",
+  permissions: "permissions",
+  accountRoles: "accountRoles",
+
+  ///////////////////
+  fileManager: "fileManager",
+  profile: "profile",
+}
