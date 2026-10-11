@@ -70,20 +70,20 @@ export function BaseTable<TData, TValue>({
   const searchText = (location?.state as { search?: string } | null)?.search
 
   return (
-    <div className="overflow-hidden rounded-[7px] border border-[#F2F4F7] bg-white shadow-sm">
+    <div className="overflow-hidden rounded-[7px] border border-slate-200 bg-white">
       <div className="overflow-x-auto">
         <Table className="w-full border-collapse">
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow
                 key={headerGroup.id}
-                className="border-b border-[#F0F2F5] bg-[#FAFAFC] hover:bg-[#FAFAFC]"
+                className="border-b border-slate-200 bg-[#FAFAFC] hover:bg-[#FAFAFC]"
               >
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead
                       key={header.id}
-                      className="h-[48px] border-r border-[#F0F2F5] px-5 py-3 text-[15px] font-normal whitespace-nowrap text-[#344054] last:border-r-0"
+                      className="h-12 border-r border-slate-200 px-5 py-3 text-[15px] font-normal whitespace-nowrap text-[#344054] last:border-r-0 [&:has([role=checkbox])]:w-12 [&:has([role=checkbox])]:px-2"
                     >
                       {header.isPlaceholder
                         ? null
@@ -106,7 +106,7 @@ export function BaseTable<TData, TValue>({
                   className="h-24 bg-white text-center"
                 >
                   <div className="flex items-center justify-center gap-2 py-8 text-[14px] text-[#667085]">
-                    <span className="h-4 w-4 animate-spin rounded-full border-2 border-[#f0e7fa] border-t-[#7F56D9]" />
+                    <span className="h-4 w-4 animate-spin rounded-full border-2 border-slate-200 border-t-[#7F56D9]" />
                     Loading...
                   </div>
                 </TableCell>
@@ -118,12 +118,12 @@ export function BaseTable<TData, TValue>({
                   data-state={
                     rowSelection && row.getIsSelected() ? "selected" : undefined
                   }
-                  className={`h-10 border-b border-[#F0F2F5] transition-colors last:border-b-0 ${"bg-white"} hover:bg-[#fffffe] data-[state=selected]:bg-[#EDE9FF]`}
+                  className={`h-10 border-b border-slate-200 transition-colors last:border-b-0 ${"bg-white"} hover:bg-[#fffffe] data-[state=selected]:bg-[#EDE9FF]`}
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
-                      className="border-r border-[#F0F2F5] px-5 py-3 text-[14px] font-normal whitespace-nowrap text-[#475467] last:border-r-0"
+                      className="border-r border-slate-200 px-5 py-3 text-[14px] font-normal whitespace-nowrap text-[#475467] last:border-r-0 [&:has([role=checkbox])]:w-12 [&:has([role=checkbox])]:px-2"
                     >
                       {flexRender(
                         cell.column.columnDef.cell,

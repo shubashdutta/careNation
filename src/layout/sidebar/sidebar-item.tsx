@@ -48,9 +48,9 @@ const SidebarItem = ({ sidebarExpanded }: { sidebarExpanded: boolean }) => {
                 if (item.path) navigate(item.path)
                 toggleMenu(item.id)
               }}
-              className={`group flex h-12 w-full cursor-pointer items-center rounded-2xl px-4 text-sm font-medium transition-all duration-200 ${
+              className={`group flex h-12 w-full cursor-pointer items-center rounded-md px-4 text-sm font-medium transition-all duration-200 ${
                 active
-                  ? "bg-[#1AC32E] text-white shadow-md shadow-[#1AC32E]/20"
+                  ? "bg-primary-500 text-white"
                   : "text-[#2F234F] hover:bg-gray-100 hover:text-gray-900"
               } ${!sidebarExpanded ? "justify-center px-0" : ""}`}
             >
@@ -77,9 +77,9 @@ const SidebarItem = ({ sidebarExpanded }: { sidebarExpanded: boolean }) => {
               to={item.path || "/"}
               onClick={() => setOpenMenus([])}
               className={({ isActive }) =>
-                `group flex h-12 w-full items-center rounded-2xl px-4 text-sm font-medium transition-all duration-200 ${
+                `group flex h-12 w-full items-center rounded-md px-4 text-sm font-medium transition-all duration-200 ${
                   isActive
-                    ? "bg-[#1AC32E] text-white shadow-md shadow-[#1AC32E]/20"
+                    ? "bg-primary-500 text-white"
                     : "text-[#2F234F] hover:bg-gray-100 hover:text-gray-900"
                 } ${!sidebarExpanded ? "justify-center px-0" : ""}`
               }
@@ -98,7 +98,7 @@ const SidebarItem = ({ sidebarExpanded }: { sidebarExpanded: boolean }) => {
           {/* Hover Menu Popover for Collapsed Sidebar */}
           {!sidebarExpanded && hasChildren && isHovered && (
             <div
-              className="absolute top-0 left-full z-50 ml-2 min-w-52 animate-in rounded-xl border border-gray-100 bg-white py-2 shadow-xl duration-150 fade-in slide-in-from-left-2"
+              className="absolute top-0 left-full z-50 ml-2 min-w-52 animate-in rounded-md border border-gray-100 bg-white py-2 shadow-xl duration-150 fade-in slide-in-from-left-2"
               onMouseEnter={() => setHoveredMenu(item.id)}
               onMouseLeave={() => setHoveredMenu(null)}
             >
@@ -116,8 +116,8 @@ const SidebarItem = ({ sidebarExpanded }: { sidebarExpanded: boolean }) => {
                       to={child.path}
                       className={`flex items-center px-4 py-2 text-sm transition-colors duration-150 ${
                         isChildActive
-                          ? "bg-[#1AC32E] font-medium text-white"
-                          : "text-gray-700 hover:bg-gray-50 hover:text-[#1AC32E]"
+                          ? "bg-primary-500 font-medium text-white"
+                          : "text-gray-700 hover:bg-gray-50 hover:text-primary-500"
                       }`}
                     >
                       <span>{child.title}</span>
@@ -137,9 +137,9 @@ const SidebarItem = ({ sidebarExpanded }: { sidebarExpanded: boolean }) => {
                 key={child.id}
                 to={child.path}
                 className={({ isActive }) =>
-                  `flex h-9 items-center rounded-lg px-3 text-xs transition-all duration-150 ${
+                  `flex h-9 items-center rounded-md px-3 text-xs transition-all duration-150 ${
                     isActive
-                      ? "bg-green-50 font-semibold text-[#1AC32E]"
+                      ? "bg-green-50 font-semibold text-primary-500"
                       : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
                   }`
                 }

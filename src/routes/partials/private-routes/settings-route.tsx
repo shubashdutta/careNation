@@ -1,5 +1,5 @@
 import { PATH } from "@/constant/path"
-import GeneralSettings from "@/pages/cms/about-us"
+import GeneralSettings from "@/pages/settings/general"
 import PolicySettings from "@/pages/settings/policy"
 
 export const settingsRoutes = [

@@ -44,7 +44,7 @@ const Header = ({ onToggleSidebar }: HeaderProps) => {
           <button
             onClick={onToggleSidebar}
             aria-label="Toggle sidebar"
-            className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white transition-colors hover:bg-white/20"
+            className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl bg-white/10 text-white transition-colors hover:bg-white/20"
           >
             <Menu className="h-5 w-5" />
           </button>
@@ -74,7 +74,7 @@ const Header = ({ onToggleSidebar }: HeaderProps) => {
           {/* Yellow Flag / Quick Action Icon */}
           <button
             aria-label="Action Flag"
-            className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#FEF3C7] text-[#D97706] transition-all hover:brightness-95"
+            className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-[#D97706] transition-all hover:brightness-95"
           >
             <Flag className="h-5 w-5 fill-current" />
           </button>
@@ -85,7 +85,7 @@ const Header = ({ onToggleSidebar }: HeaderProps) => {
             className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white transition-colors hover:bg-white/20"
           >
             <Bell className="h-5 w-5" />
-            <span className="absolute top-2 right-2 flex h-2 w-2 rounded-full bg-[#1AC32E]" />
+            <span className="absolute top-2 right-2 flex h-2 w-2 rounded-full bg-primary-500" />
           </button>
 
           {/* User Profile Pill & Dropdown */}
@@ -96,11 +96,11 @@ const Header = ({ onToggleSidebar }: HeaderProps) => {
                   src="https://github.com/shadcn.png"
                   alt="User Profile"
                 />
-                <AvatarFallback className="bg-[#1AC32E] text-white">
+                <AvatarFallback className="bg-primary-500 text-white">
                   SG
                 </AvatarFallback>
               </Avatar>
-              <Settings className="h-5 w-5 text-[#2563EB]" />
+              <Settings className="h-5 w-5 text-blue" />
             </DropdownMenuTrigger>
 
             <DropdownMenuContent
@@ -112,7 +112,7 @@ const Header = ({ onToggleSidebar }: HeaderProps) => {
                 <div className="flex items-center gap-3 px-3">
                   <Avatar className="h-10 w-10">
                     <AvatarImage src="https://github.com/shadcn.png" />
-                    <AvatarFallback className="bg-[#1AC32E] text-white">
+                    <AvatarFallback className="bg-primary-500 text-white">
                       SG
                     </AvatarFallback>
                   </Avatar>
@@ -126,7 +126,7 @@ const Header = ({ onToggleSidebar }: HeaderProps) => {
                   </div>
                 </div>
 
-                <div className="mx-3 mt-3 w-fit rounded-full bg-[#1AC32E] px-4 py-0.5 text-xs font-medium text-white capitalize">
+                <div className="mx-3 mt-3 w-fit rounded-full bg-primary-500 px-4 py-0.5 text-xs font-medium text-white capitalize">
                   Admin
                 </div>
 
@@ -286,7 +286,7 @@ const MenuItem = ({
 //             className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white transition-colors hover:bg-white/20"
 //           >
 //             <Bell className="h-5 w-5" />
-//             <span className="absolute top-2 right-2 flex h-2 w-2 rounded-full bg-[#1AC32E]" />
+//             <span className="absolute top-2 right-2 flex h-2 w-2 rounded-full bg-primary-500" />
 //           </button>
 
 //           {/* User Profile Pill & Dropdown */}
@@ -297,7 +297,7 @@ const MenuItem = ({
 //                   src="https://github.com/shadcn.png"
 //                   alt="User Profile"
 //                 />
-//                 <AvatarFallback className="bg-[#1AC32E] text-white">
+//                 <AvatarFallback className="bg-primary-500 text-white">
 //                   SG
 //                 </AvatarFallback>
 //               </Avatar>
@@ -313,7 +313,7 @@ const MenuItem = ({
 //                 <div className="flex items-center gap-3 px-3">
 //                   <Avatar className="h-10 w-10">
 //                     <AvatarImage src="https://github.com/shadcn.png" />
-//                     <AvatarFallback className="bg-[#1AC32E] text-white">
+//                     <AvatarFallback className="bg-primary-500 text-white">
 //                       SG
 //                     </AvatarFallback>
 //                   </Avatar>
@@ -327,7 +327,7 @@ const MenuItem = ({
 //                   </div>
 //                 </div>
 
-//                 <div className="mx-3 mt-3 w-fit rounded-full bg-[#1AC32E] px-4 py-0.5 text-xs font-medium text-white capitalize">
+//                 <div className="mx-3 mt-3 w-fit rounded-full bg-primary-500 px-4 py-0.5 text-xs font-medium text-white capitalize">
 //                   Admin
 //                 </div>
 

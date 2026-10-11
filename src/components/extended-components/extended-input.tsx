@@ -13,7 +13,7 @@ import { Eye, EyeOff } from "lucide-react";
 
 interface InputProps<TFormValues extends FieldValues> {
   name: Path<TFormValues>;
-  placeholder?: string;
+  placeholder?: string; 
   type?: string;
   isDisabled?: boolean;
   className?: string;

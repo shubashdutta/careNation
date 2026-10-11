@@ -1,5 +1,5 @@
 import { PATH } from "@/constant/path"
-import Warehouse from "@/pages/warehouse"
+import Warehouse from "@/pages/store-manager/warehouse"
 
 export const warehouseRoutes = [
   {

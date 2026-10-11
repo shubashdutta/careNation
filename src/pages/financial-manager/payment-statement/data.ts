@@ -1,0 +1,61 @@
+import type { IPaymentStatement } from "./types";
+
+
+export const paymentStatementData: IPaymentStatement[] = [
+    
+  {
+    id: "PS-2025-0001",
+    lotNo: "LOT-1024",
+    member: "M-1001",
+    createdOn: "Jan-28-2025",
+    paymentMethod: "Bank Transfer",
+    payeeBank: "Global IME Bank",
+    paymentSettlement: "Feb-03-2025",
+    transDate: "Jan-31-2025",
+    payableAmt: 20000,
+  },
+  {
+    id: "PS-2025-0002",
+    lotNo: "LOT-1025",
+    member: "M-1002",
+    createdOn: "Jan-29-2025",
+    paymentMethod: "Bank Transfer",
+    payeeBank: "Nabil Bank",
+    paymentSettlement: "Feb-04-2025",
+    transDate: "Feb-01-2025",
+    payableAmt: 18500,
+  },
+  {
+    id: "PS-2025-0003",
+    lotNo: "LOT-1026",
+    member: "M-1003",
+    createdOn: "Jan-30-2025",
+    paymentMethod: "Bank Transfer",
+    payeeBank: "NIC Asia Bank",
+    paymentSettlement: "Feb-05-2025",
+    transDate: "Feb-02-2025",
+    payableAmt: 32500,
+  },
+  {
+    id: "PS-2025-0004",
+    lotNo: "LOT-1027",
+    member: "M-1004",
+    createdOn: "Jan-31-2025",
+    paymentMethod: "Bank Transfer",
+    payeeBank: "Prabhu Bank",
+    paymentSettlement: "Feb-06-2025",
+    transDate: "Feb-03-2025",
+    payableAmt: 15750,
+  },
+  {
+    id: "PS-2025-0005",
+    lotNo: "LOT-1028",
+    member: "M-1005",
+    createdOn: "Feb-01-2025",
+    paymentMethod: "Bank Transfer",
+    payeeBank: "NMB Bank",
+    paymentSettlement: "Feb-07-2025",
+    transDate: "Feb-04-2025",
+    payableAmt: 24000,
+  },
+]

@@ -6,12 +6,13 @@ import { dashboardRoutes } from "./partials/private-routes/dashboard-route"
 import { orderRoutes } from "./partials/private-routes/order-route"
 import PrivateRouteWrapper from "./private-route-wrapper"
 import NotFound from "@/pages/not-found"
-import { brandRoutes } from "./partials/private-routes/brand-route"
 import { warehouseRoutes } from "./partials/private-routes/warehouse-route"
 import { settingsRoutes } from "./partials/private-routes/settings-route"
 import { contentRoutes } from "./partials/private-routes/content-route"
-import { cmsRoutes } from "./partials/private-routes/cms-route"
 import { teamRoutes } from "./partials/private-routes/team-route"
+import { financialRoutes } from "./partials/private-routes/financial-route"
+import { storeManagerRoutes } from "./partials/private-routes/store-manager-routes"
+import { productManagerRoutes } from "./partials/private-routes/product-manager"
 
 /**
  * MainRoutes defines the routing configuration for the application.
@@ -28,12 +29,13 @@ const MainRoutes = [
     ),
     children: [
       ...dashboardRoutes,
+      ...financialRoutes,
+      ...storeManagerRoutes,
+      ...productManagerRoutes,
       ...orderRoutes,
-      ...brandRoutes,
       ...warehouseRoutes,
       ...settingsRoutes,
       ...contentRoutes,
-      ...cmsRoutes,
       ...teamRoutes,
 
       {

@@ -21,11 +21,11 @@ const Layout = () => {
       />
 
       <div className="flex flex-1 overflow-hidden">
-        <div className="sidebar-scroll h-full overflow-y-auto">
+        <div className="sidebar-scroll h-full overflow-y-auto no-scrollbar">
           <Sidebar sidebarExpanded={sidebarExpanded} />
         </div>
 
-        <main className="mr-4 flex-1 overflow-auto rounded-t-3xl bg-[#e9ebee] p-6">
+        <main className="flex-1 overflow-auto bg-[#e9ebee]/60 p-6">
           <Outlet />
         </main>
       </div>

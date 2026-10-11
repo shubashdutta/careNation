@@ -37,7 +37,6 @@ export const SidebarData: SidebarSection[] = [
       {
         id: 64,
         title: "Team",
-        // path: PATH.users.manageUsers,
         icon: <Users />,
         children: [
           { id: 641, title: "Add New", path: PATH.team.add },
@@ -59,17 +58,46 @@ export const SidebarData: SidebarSection[] = [
       {
         id: 51,
         title: "Financial Manager",
-        path: PATH.settings.currency,
         icon: <Wallet />,
+        children: [
+          {
+            id: 511,
+            title: "Payout Payment",
+            path: PATH.financialManager.payoutPayment,
+          },
+          {
+            id: 512,
+            title: "Payment Statement",
+            path: PATH.financialManager.paymentStatement,
+          },
+        ],
       },
       {
         id: 61,
         title: "Store Manager",
         icon: <Store />,
         children: [
-          { id: 611, title: "Vendors", path: PATH.users.vendors },
-          { id: 612, title: "Suppliers", path: PATH.users.suppliers },
-          { id: 25, title: "Warehouse", path: PATH.warehouse },
+          { id: 611, title: "Province", path: PATH.storeManager.province },
+          {
+            id: 612,
+            title: "Sales Points",
+            path: PATH.storeManager.salesPoint,
+          },
+          {
+            id: 613,
+            title: "Warehouse",
+            path: PATH.storeManager.warehouse,
+          },
+          {
+            id: 614,
+            title: "Recieve Inventory",
+            path: PATH.storeManager.receiveInventory,
+          },
+          {
+            id: 615,
+            title: "Inventory Reports",
+            path: PATH.storeManager.inventoryReports,
+          },
         ],
       },
       {
@@ -77,16 +105,14 @@ export const SidebarData: SidebarSection[] = [
         title: "Product Manager",
         icon: <Package />,
         children: [
-          { id: 21, title: "Category", path: PATH.product.category },
-          { id: 221, title: "Add Product", path: PATH.product.addProduct },
-          { id: 222, title: "Product List", path: PATH.product.list },
+          { id: 21, title: "Category", path: PATH.productManager.category },
           {
-            id: 223,
-            title: "Expire Product",
-            path: PATH.product.expireProduct,
+            id: 221,
+            title: "Product",
+            path: PATH.productManager.list,
           },
-          { id: 23, title: "Attributes", path: PATH.attributes },
-          { id: 24, title: "Brands", path: PATH.brands },
+          { id: 23, title: "Attributes", path: PATH.productManager.attributes },
+          { id: 24, title: "Manage Brands", path: PATH.productManager.brands },
         ],
       },
       {

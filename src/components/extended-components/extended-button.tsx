@@ -92,7 +92,7 @@ const ExtendedButton: React.FC<ButtonProps> = ({
       disabled={isDisabled}
       aria-busy={isLoading}
       className={cn(
-        "flex cursor-pointer items-center justify-center gap-2 bg-[#1AC32E] px-4 text-sm font-normal text-white capitalize shadow-[0_4px_14px_0_#6D28D959] duration-300 hover:bg-[#14ee2e] disabled:cursor-not-allowed disabled:hover:bg-[#1AC32E]",
+        "flex cursor-pointer items-center justify-center gap-2 bg-primary-500 px-4 text-sm font-normal text-white capitalize shadow-[0_4px_14px_0_#6D28D959] duration-300 hover:bg-[#14ee2e] disabled:cursor-not-allowed disabled:hover:bg-primary-500",
         radiusClass,
         sizeClass,
         variantClass,

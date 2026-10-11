@@ -1,0 +1,55 @@
+import type { ISalesPoint } from "./types";
+
+
+export const salesPointData: ISalesPoint[] = [
+  {
+    id: "1",
+    storeCode: "BAG-001",
+    storeName: "Bagmati Province Hub",
+    contactPerson: "Aayush Maharjan",
+    mobile: "9841234567",
+    address: "Kamaladi, Kathmandu",
+    password: "password123",
+    status: "Active",
+  },
+  {
+    id: "2",
+    storeCode: "KOS-002",
+    storeName: "Koshi Province Outlet",
+    contactPerson: "Sunita Shrestha",
+    mobile: "9818987654",
+    address: "Main Road, Biratnagar",
+    password: "password123",
+    status: "Active",
+  },
+  {
+    id: "3",
+    storeCode: "GAN-003",
+    storeName: "Gandaki Province Center",
+    contactPerson: "Prabin Tamang",
+    mobile: "9851122334",
+    address: "New Road, Pokhara",
+    password: "password123",
+    status: "Active",
+  },
+  {
+    id: "4",
+    storeCode: "LUB-004",
+    storeName: "Lumbini Province Branch",
+    contactPerson: "Pooja Karki",
+    mobile: "9802345678",
+    address: "Traffic Chowk, Butwal",
+    password: "password123",
+    status: "Active",
+  },
+  {
+    id: "5",
+    storeCode: "SUD-005",
+    storeName: "Sudurpashchim Province Office",
+    contactPerson: "Bikash Gurung",
+    mobile: "9860112233",
+    address: "Campus Road, Dhangadhi",
+    password: "password123",
+    status: "Active",
+  },
+]

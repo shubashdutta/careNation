@@ -59,7 +59,7 @@ const Dashboard = () => {
         <div className="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
           <div>
             <h1 className="text-2xl font-semibold tracking-tight text-[#1E1235]">
-              Hi <span className="font-medium text-[#1AC32E]">User Name</span>,
+              Hi <span className="font-medium text-primary-500">User Name</span>,
               Welcome Back
             </h1>
             <p className="mt-1 text-xs text-gray-400">Admin Panel</p>
@@ -132,7 +132,7 @@ const Dashboard = () => {
                     <RefreshCw className="h-3.5 w-3.5" />
                   </button>
                   <div className="flex items-center gap-4">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#1AC32E]">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-primary-500">
                       <TrendingUp className="h-5 w-5" />
                     </div>
                     <div>

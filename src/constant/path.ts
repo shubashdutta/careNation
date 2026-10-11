@@ -20,14 +20,15 @@ const DASHBOARD_PATH = {
 /**
  * PRODUCT PATH
  */
-const PRODUCT_PATH = {
-  category: "/products/category",
-  addCategory: "/products/category/add",
-  list: "/products/list",
-  addProduct: "/products/list/add",
-  editProduct: "/products/edit/:id",
-  viewProduct: "/products/list/view",
-  expireProduct: "/products/list/expire",
+const PRODUCT_MANAGER_PATH = {
+  category: "/product-manager/category",
+  addCategory: "/product-manager/category/add",
+  list: "/product-manager/list",
+  addProduct: "/product-manager/list/add",
+  editProduct: "/product-manager/edit/:id",
+  viewProduct: "/product-manager/list/view",
+  brands: "/product-manager/brands",
+  attributes: "/product-manager/attributes",
 }
 
 /**
@@ -95,6 +96,19 @@ const CONTENT_PATH = {
   fileManager: "/content/file-manager",
 }
 
+const FINANCIAL_PATH={
+  payoutPayment : "/financial/payout-payment",
+  paymentStatement : "financial/payment-statement"
+}
+
+const STORE_MANAGER_PATH={
+  province : "/store-manager/province",
+  salesPoint : "/store-manager/sales-point",
+  warehouse: "/store-manager/warehouse",
+  receiveInventory : "/store-manager/receive-inventory",
+  inventoryReports : "/store-manager/inventory-reports"
+}
+
 const TEAM_PATH = {
   add: "/team/add",
   matchingTree: "/team/matching-tree",
@@ -119,10 +133,9 @@ const TEAM_PATH = {
 export const PATH = {
   auth: AUTH_PATH,
   dashboard: DASHBOARD_PATH,
-  product: PRODUCT_PATH,
-  brands: "/brands",
-  attributes: "/attributes",
-  warehouse: "/warehouse",
+  financialManager: FINANCIAL_PATH,
+  storeManager: STORE_MANAGER_PATH,
+  productManager: PRODUCT_MANAGER_PATH,
   campaign: CAMPAIGN_PATH,
   order: ORDER_PATH,
   users: USERS_PATH,
