@@ -8,6 +8,16 @@ export interface IWarehouse {
     name: string
   }
   type: WarehouseType
+  province?: string
+  district?: string
+  municipality?: string
+  wardNo?: string
+  streetName?: string
+  landmark?: string
+  warehouseId?: string
+  productId?: string
+  productStock?: number
+  quantity?: number
   name: string
   code: string
   description?: string

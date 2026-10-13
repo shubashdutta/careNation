@@ -36,85 +36,66 @@ export const useWarehouseColumns = (): ColumnDef<IWarehouse>[] => {
         </span>
       ),
     },
+    // {
+    //   header: "Name",
+    //   accessorKey: "name",
+    //   cell: ({ row }) => (
+    //     <span className="font-medium text-tertiary-100">
+    //       {row.original.name ?? "—"}
+    //     </span>
+    //   ),
+    // },
     {
-      header: "Name",
-      accessorKey: "name",
+      id: "warehouse",
+      header: "Warehouse ",
+      accessorKey: "warehouse",
+      cell: ({ row }) => {
+        return (
+          <span className="text-tertiary-200">{row.original.code ?? "—"}</span>
+        )
+      },
+    },
+    {
+      header: "Province",
+      accessorKey: "province",
       cell: ({ row }) => (
-        <span className="font-medium text-tertiary-100">
-          {row.original.name ?? "—"}
+        <span className="text-tertiary-200">
+          {row.original.province ?? row.getValue("province") ?? "—"}
         </span>
       ),
     },
     {
-      id: "code",
-      header: "Warehouse Code",
-      accessorKey: "code",
+      header: "District",
+      accessorKey: "district",
       cell: ({ row }) => (
-        <span className="text-tertiary-200">{row.original.code ?? "—"}</span>
+        <span className="text-tertiary-200">{row.original.district ?? "—"}</span>
       ),
     },
     {
-      header: "Type",
-      accessorKey: "type",
+      header: "Municipality",
+      accessorKey: "municipality",
       cell: ({ row }) => (
-        <span className="text-tertiary-200">{row.original.type ?? "—"}</span>
+        <span className="text-tertiary-200">
+          {row.original.municipality ?? "—"}
+        </span>
       ),
     },
     {
-      header: "Contact Name",
-      accessorKey: "contact.contactName",
-      cell: ({ row }) => (
-        <span className="text-tertiary-200">{row.original.contact?.contactName ?? "—"}</span>
-      ),
-    },
-    {
-      header: "Contact Phone",
+      header: "Phone",
       accessorKey: "contact.contactPhone",
       cell: ({ row }) => (
-        <span className="text-tertiary-200">{row.original.contact?.contactPhone ?? "—"}</span>
+        <span className="text-tertiary-200">
+          {row.original.contact?.contactPhone ?? "—"}
+        </span>
       ),
     },
-      {
-      header: "Contact Email",
+    {
+      header: "Email",
       accessorKey: "contact.contactEmail",
       cell: ({ row }) => (
-        <span className="text-tertiary-200">{row.original.contact?.contactEmail ?? "—"}</span>
-      ),
-    },
-    {
-      header: "Address Line 1",
-      accessorKey: "address.addressLine1",
-      cell: ({ row }) => (
-        <span className="text-tertiary-200">{row.original.address?.addressLine1 ?? "—"}</span>
-      ),
-    },
-      {
-      header: "Address Line 2",
-      accessorKey: "address.addressLine2",
-      cell: ({ row }) => (
-        <span className="text-tertiary-200">{row.original.address?.addressLine2 ?? "—"}</span>
-      ),
-    },
-
-    {
-      header: "Postcode",
-      accessorKey: "address.postcode",
-      cell: ({ row }) => (
-        <span className="text-tertiary-200">{row.original.address?.postalCode ?? "—"}</span>
-      ),
-    },
-    {
-      header: "City",
-      accessorKey: "address.city",
-      cell: ({ row }) => (
-        <span className="text-tertiary-200">{row.original.address?.city ?? "—"}</span>
-      ),
-    },
-    {
-      header: "State",
-      accessorKey: "address.state",
-      cell: ({ row }) => (
-        <span className="text-tertiary-200">{row.original.address?.state ?? "—"}</span>
+        <span className="text-tertiary-200">
+          {row.original.contact?.contactEmail ?? "—"}
+        </span>
       ),
     },
 
