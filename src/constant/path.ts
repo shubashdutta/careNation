@@ -29,6 +29,7 @@ const PRODUCT_MANAGER_PATH = {
   viewProduct: "/product-manager/list/view",
   brands: "/product-manager/brands",
   attributes: "/product-manager/attributes",
+  products: "/product-manager/products",
 }
 
 /**
@@ -36,7 +37,9 @@ const PRODUCT_MANAGER_PATH = {
  */
 const ORDER_PATH = {
   orderList: "/orders/order-list",
+  quickOrder: "/purchase/quick-order",
   deliveryManagement: "/orders/delivery-management",
+  pendingDispatch: "/purchase/pending-dispatch",
 }
 
 /**
@@ -96,17 +99,17 @@ const CONTENT_PATH = {
   fileManager: "/content/file-manager",
 }
 
-const FINANCIAL_PATH={
-  payoutPayment : "/financial/payout-payment",
-  paymentStatement : "financial/payment-statement"
+const FINANCIAL_PATH = {
+  payoutPayment: "/financial/payout-payment",
+  paymentStatement: "financial/payment-statement",
 }
 
-const STORE_MANAGER_PATH={
-  province : "/store-manager/province",
-  salesPoint : "/store-manager/sales-point",
+const STORE_MANAGER_PATH = {
+  province: "/store-manager/province",
+  salesPoint: "/store-manager/sales-point",
   warehouse: "/store-manager/warehouse",
-  receiveInventory : "/store-manager/receive-inventory",
-  inventoryReports : "/store-manager/inventory-reports"
+  receiveInventory: "/store-manager/receive-inventory",
+  inventoryReports: "/store-manager/inventory-reports",
 }
 
 const TEAM_PATH = {

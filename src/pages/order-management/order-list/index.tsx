@@ -36,7 +36,7 @@ const OrderList = () => {
 
   return (
     <div className="space-y-4">
-      <Breadcrumb
+      {/* <Breadcrumb
         trail={breadcrumbTrail}
         title="Order List"
         action={
@@ -46,7 +46,7 @@ const OrderList = () => {
             icon={<Plus className="h-3.5 w-3.5" />}
           />
         }
-      />
+      /> */}
 
       <ListToolbar
         searchValue={search}

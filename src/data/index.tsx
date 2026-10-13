@@ -106,12 +106,13 @@ export const SidebarData: SidebarSection[] = [
         icon: <Package />,
         children: [
           { id: 21, title: "Category", path: PATH.productManager.category },
+          { id: 23, title: "Attributes", path: PATH.productManager.attributes },
+
           {
             id: 221,
             title: "Product",
-            path: PATH.productManager.list,
+            path: PATH.productManager.products,
           },
-          { id: 23, title: "Attributes", path: PATH.productManager.attributes },
           { id: 24, title: "Manage Brands", path: PATH.productManager.brands },
         ],
       },
@@ -120,12 +121,20 @@ export const SidebarData: SidebarSection[] = [
         title: "Purchase",
         icon: <ShoppingCart />,
         children: [
-          { id: 311, title: "Order List", path: PATH.order.orderList },
+          { id: 333, title: "Quick Order", path: PATH.order.quickOrder },
+          { id: 311, title: "Order ", path: PATH.order.orderList },
           {
-            id: 32,
-            title: "Delivery Management",
-            path: PATH.order.deliveryManagement,
+            id: 312,
+            title: "Pending Dispatch ",
+            path: PATH.order.pendingDispatch,
           },
+          { id: 313, title: "Purchase List", path: PATH.order.orderList },
+          { id: 314, title: "Approval Report", path: PATH.order.orderList },
+          // {
+          //   id: 32,
+          //   title: "Delivery Management",
+          //   path: PATH.order.deliveryManagement,
+          // },
         ],
       },
       {
