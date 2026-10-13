@@ -144,7 +144,7 @@ export const SidebarData: SidebarSection[] = [
       {
         id: 12,
         title: "Reports",
-        path: PATH.dashboard.analytics,
+
         icon: <ClipboardList />,
         children: [
           {
@@ -153,8 +153,68 @@ export const SidebarData: SidebarSection[] = [
             path: PATH.report.commission,
           },
           {
-            id: 11,
-            title: "Commission Reports",
+            id: 112,
+            title: "Sales Report",
+            path: PATH.report.salesReports,
+          },
+          {
+            id: 113,
+            title: "Monthly CTO",
+            path: PATH.report.monthlyReports,
+          },
+          {
+            id: 114,
+            title: "Weekly Report",
+            path: PATH.report.commission,
+          },
+          {
+            id: 115,
+            title: "Commission Report (M)",
+            path: PATH.report.monthlyReports,
+          },
+          {
+            id: 116,
+            title: "Income Audit",
+            path: PATH.report.commission,
+          },
+          {
+            id: 117,
+            title: "TDS Report",
+            path: PATH.report.commission,
+          },
+          {
+            id: 118,
+            title: "TDS Payout-Wise",
+            path: PATH.report.commission,
+          },
+          {
+            id: 119,
+            title: "MIS Report",
+            path: PATH.report.commission,
+          },
+          {
+            id: 120,
+            title: "Vat Report",
+            path: PATH.report.commission,
+          },
+          {
+            id: 121,
+            title: "Not Placed",
+            path: PATH.report.commission,
+          },
+          {
+            id: 122,
+            title: "Payouts",
+            path: PATH.report.commission,
+          },
+          {
+            id: 123,
+            title: "Rank Achiever",
+            path: PATH.report.commission,
+          },
+          {
+            id: 124,
+            title: "Product Report",
             path: PATH.report.commission,
           },
         ],
