@@ -1,13 +1,23 @@
 import type { ColumnDef } from "@tanstack/react-table"
 import { Checkbox } from "@/components/ui/checkbox"
-import CellAction from "./components/cell-action"
+import OrderRowActions from "./components/order-row-actions"
 import type { IOrder, OrderStatus } from "./type"
-import { ImageIcon } from "lucide-react"
 
 const STATUS_TONE: Record<OrderStatus, string> = {
-  PENDING: "bg-yellow2 text-yellow3",
-  CONFIRMED: "bg-success3 text-success",
-  "Sent Warehouse": "bg-primary-100 text-primary-400",
+  PENDING: "bg-amber-50 text-amber-700",
+  CONFIRMED: "bg-emerald-50 text-emerald-700",
+  "Sent Warehouse": "bg-sky-50 text-sky-700",
+}
+
+const getConfirmationData = (status: OrderStatus) => {
+  switch (status) {
+    case "CONFIRMED":
+      return "Approved by: TDM"
+    case "Sent Warehouse":
+      return "Dispatched by: TDM"
+    default:
+      return "Awaiting confirmation"
+  }
 }
 
 export const useOrderColumns = (): ColumnDef<IOrder>[] => {
@@ -36,11 +46,20 @@ export const useOrderColumns = (): ColumnDef<IOrder>[] => {
     },
     {
       id: "order",
-      header: "Order",
+      header: "#",
       cell: ({ row }) => String(row.index + 1).padStart(2, "0"),
     },
     {
-      header: "Customer Name",
+      header: "Order No.",
+      accessorKey: "orderNumber",
+      cell: ({ row }) => (
+        <span className="inline-block rounded bg-amber-100 px-2 py-0.5 font-semibold text-amber-800">
+          #{row.original.orderNumber}
+        </span>
+      ),
+    },
+    {
+      header: "User Name",
       accessorKey: "customerName",
       cell: ({ row }) => (
         <span className="font-normal text-tertiary-100">
@@ -51,37 +70,14 @@ export const useOrderColumns = (): ColumnDef<IOrder>[] => {
       ),
     },
     {
-      id: "image",
-      header: "Image",
-      cell: ({ row }) =>
-        row.original?.orderItems.length > 0 ? (
-          <img
-            src={row.original?.orderItems?.[0]?.productSnapshot?.image}
-            alt={
-              row.original?.orderItems?.[0]?.productSnapshot?.productName ||
-              "Product Image"
-            }
-            className="h-9 w-9 rounded-lg object-cover"
-          />
-        ) : (
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gray-100">
-            <ImageIcon className="h-4 w-4 text-tertiary-300" />
-          </div>
-        ),
-    },
-    {
-      header: "Product",
-      accessorKey: "productName",
+      header: "Confirmation Data",
+      id: "confirmationData",
       cell: ({ row }) => (
-        <span className="font-normal text-tertiary-100">
-          {row.original?.orderItems.length > 1
-            ? `${row.original.orderItems.length} items`
-            : row.original?.orderItems?.[0]?.productSnapshot?.productName ||
-              "N/A"}
+        <span className="inline-block rounded bg-purple-100 px-2 py-0.5 text-xs font-medium text-purple-700">
+          {getConfirmationData(row.original.status)}
         </span>
       ),
     },
-
     {
       header: "Total Amount",
       accessorKey: "totalAmount",
@@ -90,10 +86,6 @@ export const useOrderColumns = (): ColumnDef<IOrder>[] => {
           NPR {row.original.totalAmount.toLocaleString()}
         </span>
       ),
-    },
-    {
-      header: "Payment Method",
-      accessorKey: "paymentMethod",
     },
     {
       header: "Order Status",
@@ -113,8 +105,9 @@ export const useOrderColumns = (): ColumnDef<IOrder>[] => {
     {
       id: "action",
       header: "Action",
-      cell: ({ row }) => <CellAction order={row.original} />,
+      cell: ({ row }) => <OrderRowActions order={row.original} />,
       enableSorting: false,
     },
   ]
 }
+

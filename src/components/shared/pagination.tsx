@@ -9,6 +9,8 @@ interface PaginationProps {
   currentPage?: number
 }
 
+const PER_PAGE_OPTIONS = [5, 10, 20, 50]
+
 const Pagination = ({
   totalPages = 0,
   totalCount = 0,
@@ -40,15 +42,40 @@ const Pagination = ({
     setSearchParams(newParams)
   }
 
+  const handlePerPageChange = (value: string) => {
+    const newParams = new URLSearchParams(searchParams)
+    newParams.set("perPage", value)
+    newParams.set("page", "1")
+    setSearchParams(newParams)
+  }
+
   const startItem = (page - 1) * itemsPerPage + 1
   const endItem = Math.min(page * itemsPerPage, totalCount)
 
   return (
-    <div className="my-6 flex items-center justify-between px-4">
-      <div className="text-sm text-tertiary-300">
-        {totalCount > 0
-          ? `${startItem}-${endItem} of ${totalCount}`
-          : "0 results"}
+    <div className="my-6 flex items-center justify-between gap-4 px-4">
+      <div className="flex items-center gap-4 text-sm text-tertiary-300">
+        <div className="flex items-center gap-2">
+          <span className="whitespace-nowrap text-slate-500">
+            Rows per page
+          </span>
+          <select
+            value={itemsPerPage}
+            onChange={(e) => handlePerPageChange(e.target.value)}
+            className="cursor-pointer rounded-md border border-slate-200 bg-white px-2 py-1 text-sm text-slate-600 outline-none hover:bg-slate-50 focus:border-emerald-500"
+          >
+            {PER_PAGE_OPTIONS.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        </div>
+        <span>
+          {totalCount > 0
+            ? `${startItem}-${endItem} of ${totalCount}`
+            : "0 results"}
+        </span>
       </div>
 
       <div className="flex items-center gap-2">

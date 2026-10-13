@@ -37,7 +37,7 @@ const useGetOrders = () => {
   })
 
   return {
-    orders: data?.data ?? [],
+    records: data?.data?.records ?? [],
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     //@ts-ignore
     paginationData: data?.pagination,

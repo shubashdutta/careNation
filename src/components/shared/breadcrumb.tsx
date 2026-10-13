@@ -5,10 +5,17 @@ interface BreadcrumbProps {
   trail: string[]
   className?: string
   title?: string
+  subtitle?: string
   action?: ReactNode
 }
 
-const Breadcrumb = ({ trail, className, title, action }: BreadcrumbProps) => {
+const Breadcrumb = ({
+  trail,
+  className,
+  title,
+  subtitle,
+  action,
+}: BreadcrumbProps) => {
   return (
     <div className={cn("space-y-4", className)}>
       {/* Clean White Pill Container */}
@@ -42,11 +49,16 @@ const Breadcrumb = ({ trail, className, title, action }: BreadcrumbProps) => {
       </nav>
 
       {/* Optional Title & Action Header Section */}
-      {(title || action) && (
+      {(title || subtitle || action) && (
         <div className="flex items-center justify-between gap-3 px-1">
-          {title && (
-            <h1 className="text-xl font-medium text-[#2F234F]">{title}</h1>
-          )}
+          <div>
+            {title && (
+              <h1 className="text-xl font-medium text-[#2F234F]">{title}</h1>
+            )}
+            {subtitle && (
+              <p className="mt-1 text-sm text-slate-500">{subtitle}</p>
+            )}
+          </div>
           {action && <div>{action}</div>}
         </div>
       )}

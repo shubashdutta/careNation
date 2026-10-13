@@ -129,7 +129,11 @@ export const SidebarData: SidebarSection[] = [
             path: PATH.order.pendingDispatch,
           },
           { id: 313, title: "Purchase List", path: PATH.order.orderList },
-          { id: 314, title: "Approval Report", path: PATH.order.orderList },
+          {
+            id: 314,
+            title: "Approval Report",
+            path: PATH.order.approvalReports,
+          },
           // {
           //   id: 32,
           //   title: "Delivery Management",
@@ -142,6 +146,18 @@ export const SidebarData: SidebarSection[] = [
         title: "Reports",
         path: PATH.dashboard.analytics,
         icon: <ClipboardList />,
+        children: [
+          {
+            id: 111,
+            title: "Commission Reports",
+            path: PATH.report.commission,
+          },
+          {
+            id: 11,
+            title: "Commission Reports",
+            path: PATH.report.commission,
+          },
+        ],
       },
       {
         id: 53,

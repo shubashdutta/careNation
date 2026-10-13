@@ -40,6 +40,7 @@ const ORDER_PATH = {
   quickOrder: "/purchase/quick-order",
   deliveryManagement: "/orders/delivery-management",
   pendingDispatch: "/purchase/pending-dispatch",
+  approvalReports: "/purchase/approval-reports",
 }
 
 /**
@@ -98,6 +99,9 @@ const CONTENT_PATH = {
   announcement: "/content/announcement",
   fileManager: "/content/file-manager",
 }
+const Report_PATH = {
+  commission: "/report/commission",
+}
 
 const FINANCIAL_PATH = {
   payoutPayment: "/financial/payout-payment",
@@ -147,4 +151,5 @@ export const PATH = {
 
   content: CONTENT_PATH,
   team: TEAM_PATH,
+  report: Report_PATH,
 }

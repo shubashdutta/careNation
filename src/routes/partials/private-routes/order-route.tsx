@@ -1,6 +1,7 @@
 import { PATH } from "@/constant/path"
+import ApprovalReportsPage from "@/pages/order-management/approvalReports/ApprovalReportsPage"
 import OrderList from "@/pages/order-management/order-list"
-import PendingDispatchList from "@/pages/order-management/pendingDispatch/PendingDispatchList"
+import PendingDispatchPage from "@/pages/order-management/pendingDispatch/PendingDispatchPage"
 import QuickOrdersListPage from "@/pages/order-management/quickOrders/QuickOrdersListPage"
 
 export const orderRoutes = [
@@ -15,6 +16,10 @@ export const orderRoutes = [
 
   {
     path: PATH.order.pendingDispatch,
-    element: <PendingDispatchList />,
+    element: <PendingDispatchPage />,
+  },
+  {
+    path: PATH.order.approvalReports,
+    element: <ApprovalReportsPage />,
   },
 ]
