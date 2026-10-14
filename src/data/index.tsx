@@ -210,12 +210,12 @@ export const SidebarData: SidebarSection[] = [
           {
             id: 123,
             title: "Rank Achiever",
-            path: PATH.report.commission,
+            path: PATH.report.reportRanks,
           },
           {
             id: 124,
             title: "Product Report",
-            path: PATH.report.commission,
+            path: PATH.report.productReport,
           },
         ],
       },
@@ -225,10 +225,25 @@ export const SidebarData: SidebarSection[] = [
         icon: <SettingsIcon />,
         children: [
           { id: 531, title: "General", path: PATH.settings.general },
-          { id: 533, title: "Policy", path: PATH.settings.policy },
-          { id: 532, title: "Security", path: PATH.settings.security },
-          { id: 54, title: "Role", path: PATH.settings.role },
-          { id: 55, title: "Assign Role", path: PATH.settings.accountRole },
+          {
+            id: 533,
+            title: "Bank",
+            path: PATH.settings.bankSeting,
+          },
+          {
+            id: 534,
+            title: "Mail",
+            path: PATH.settings.mailSetting,
+          },
+          {
+            id: 535,
+            title: "System",
+            path: PATH.settings.general,
+          },
+          // { id: 533, title: "Policy", path: PATH.settings.policy },
+          // { id: 532, title: "Security", path: PATH.settings.security },
+          // { id: 54, title: "Role", path: PATH.settings.role },
+          // { id: 55, title: "Assign Role", path: PATH.settings.accountRole },
         ],
       },
       {

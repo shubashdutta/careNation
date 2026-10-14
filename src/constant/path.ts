@@ -81,6 +81,8 @@ const SETTINGS_PATH = {
   currency: "/settings/currency",
   subscriber: "/settings/subscriber",
   general: "/settings/general",
+  bankSeting: "/setting/bank",
+  mailSetting: "/setting/mail",
   policy: "/settings/policy",
   security: "/settings/security",
   role: "/settings/role",
@@ -112,6 +114,8 @@ const Report_PATH = {
   notPalced: "/report/not-placed",
 
   payout: "/report/payout",
+  reportRanks: "/report/rank",
+  productReport: "/report/product",
 }
 
 const FINANCIAL_PATH = {
