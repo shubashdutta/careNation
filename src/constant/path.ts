@@ -103,6 +103,9 @@ const Report_PATH = {
   commission: "/report/commission",
   salesReports: "/report/sales",
   monthlyReports: "/report/monthly",
+  weeklyReport: "/report/weekly",
+  incomeAudit: "/report/income-audit",
+  tdsReport: "/report/tds",
 }
 
 const FINANCIAL_PATH = {

@@ -165,7 +165,7 @@ export const SidebarData: SidebarSection[] = [
           {
             id: 114,
             title: "Weekly Report",
-            path: PATH.report.commission,
+            path: PATH.report.weeklyReport,
           },
           {
             id: 115,
@@ -175,12 +175,12 @@ export const SidebarData: SidebarSection[] = [
           {
             id: 116,
             title: "Income Audit",
-            path: PATH.report.commission,
+            path: PATH.report.incomeAudit,
           },
           {
             id: 117,
             title: "TDS Report",
-            path: PATH.report.commission,
+            path: PATH.report.tdsReport,
           },
           {
             id: 118,
