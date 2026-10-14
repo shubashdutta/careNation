@@ -257,9 +257,19 @@ export const SidebarData: SidebarSection[] = [
         title: "Manage Users",
         icon: <UserCheck />,
         children: [
-          { id: 631, title: "Customer", path: PATH.users.customers },
-          { id: 65, title: "Delivery Rider", path: PATH.users.deliveryRider },
-          { id: 52, title: "Subscriber", path: PATH.settings.subscriber },
+          {
+            id: 631,
+            title: "Create User",
+            path: PATH.users.customers,
+          },
+          // { id: 631, title: "Customer", path: PATH.users.customers },
+          // { id: 65, title: "Delivery Rider", path: PATH.users.deliveryRider },
+          {
+            id: 632,
+            title: "User Permission",
+            path: PATH.users.userPermission,
+          },
+          // { id: 52, title: "Subscriber", path: PATH.settings.subscriber },
         ],
       },
     ],

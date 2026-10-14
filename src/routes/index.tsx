@@ -14,6 +14,8 @@ import { financialRoutes } from "./partials/private-routes/financial-route"
 import { storeManagerRoutes } from "./partials/private-routes/store-manager-routes"
 import { productManagerRoutes } from "./partials/private-routes/product-manager"
 import { ReportRoutes } from "./partials/private-routes/reports-route"
+import { supportRoutes } from "./partials/private-routes/suport-route"
+import { ManageUser } from "./partials/private-routes/manageUser"
 
 /**
  * MainRoutes defines the routing configuration for the application.
@@ -40,6 +42,8 @@ const MainRoutes = [
       ...teamRoutes,
       ...ReportRoutes,
 
+      ...supportRoutes,
+      ...ManageUser,
       {
         path: "*",
         element: <NotFound />,

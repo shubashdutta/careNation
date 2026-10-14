@@ -54,6 +54,7 @@ const USERS_PATH = {
   addSupplier: "/users/suppliers/add",
   editSupplier: "/users/suppliers/:id/edit",
   customers: "/users/customers",
+  userPermission: "/users/permission",
   manageUsers: "/users/manage-users",
   deliveryRider: "/users/delivery-riders",
 }
@@ -70,7 +71,7 @@ const CMS_PATH = {
   blog: "/cms/blog",
   testimonial: "/cms/testimonial",
   faq: "/cms/faq",
-  contactUs: "/cms/contact-us",
+  contactUs: "/support",
   media: "/cms/media",
 }
 
