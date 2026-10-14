@@ -185,27 +185,27 @@ export const SidebarData: SidebarSection[] = [
           {
             id: 118,
             title: "TDS Payout-Wise",
-            path: PATH.report.commission,
+            path: PATH.report.tdsPayout,
           },
           {
             id: 119,
             title: "MIS Report",
-            path: PATH.report.commission,
+            path: PATH.report.misReport,
           },
           {
             id: 120,
             title: "Vat Report",
-            path: PATH.report.commission,
+            path: PATH.report.vatReport,
           },
           {
             id: 121,
             title: "Not Placed",
-            path: PATH.report.commission,
+            path: PATH.report.notPalced,
           },
           {
             id: 122,
             title: "Payouts",
-            path: PATH.report.commission,
+            path: PATH.report.payout,
           },
           {
             id: 123,

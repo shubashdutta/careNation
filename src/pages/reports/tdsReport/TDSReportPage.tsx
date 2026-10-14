@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react"
 import {
   ChevronDown,
   ChevronLeft,
@@ -7,37 +7,37 @@ import {
   List,
   Printer,
   Search,
-} from "lucide-react";
-import Breadcrumb from "@/components/shared/breadcrumb";
-import { Checkbox } from "@/components/ui/checkbox";
+} from "lucide-react"
+import Breadcrumb from "@/components/shared/breadcrumb"
+import { Checkbox } from "@/components/ui/checkbox"
 
 interface TdsRow {
-  id: string;
-  cutOff: string;
-  date: string;
-  totalIncome: string;
-  tdsRate: string;
-  tdsAmount: string;
+  id: string
+  cutOff: string
+  date: string
+  totalIncome: string
+  tdsRate: string
+  tdsAmount: string
 }
 
 interface MemberDetail {
-  userId: string;
-  name: string;
-  designation: string;
-  dateOfJoining: string;
-  sponsorUsername: string;
-  sponsorName: string;
-  selfPosition: string;
-  memberStatus: string;
+  userId: string
+  name: string
+  designation: string
+  dateOfJoining: string
+  sponsorUsername: string
+  sponsorName: string
+  selfPosition: string
+  memberStatus: string
 }
 
-const breadcrumbTrail = ["Dashboard", "Reports", "TDS Report"];
+const breadcrumbTrail = ["Dashboard", "Reports", "TDS Report"]
 
-const ORDER_STATUS_OPTIONS = ["Pending", "Approved", "Rejected", "Settled"];
+const ORDER_STATUS_OPTIONS = ["Pending", "Approved", "Rejected", "Settled"]
 
-const ROWS_PER_PAGE_OPTIONS = [5, 10, 25];
+const ROWS_PER_PAGE_OPTIONS = [5, 10, 25]
 
-const TOTAL_RECORDS = 20;
+const TOTAL_RECORDS = 20
 
 const memberDetail: MemberDetail = {
   userId: "9827700454",
@@ -48,7 +48,7 @@ const memberDetail: MemberDetail = {
   sponsorName: "HIGHER 19",
   selfPosition: "Distributor (10000.00)",
   memberStatus: "Active",
-};
+}
 
 const tdsRows: TdsRow[] = [
   {
@@ -59,65 +59,65 @@ const tdsRows: TdsRow[] = [
     tdsRate: "15.00",
     tdsAmount: "2533.41",
   },
-];
+]
 
-const cardClass = "rounded-xl border border-slate-200 bg-white p-6";
+const cardClass = "rounded-xl border border-slate-200 bg-white p-6"
 
-const labelClass = "mb-1.5 block text-xs font-medium text-slate-600";
+const labelClass = "mb-1.5 block text-xs font-medium text-slate-600"
 
 const primaryButtonClass =
-  "rounded-lg bg-emerald-600 px-6 py-2 text-xs font-medium text-white transition-colors hover:bg-emerald-700";
+  "rounded-lg bg-emerald-600 px-6 py-2 text-xs font-medium text-white transition-colors hover:bg-emerald-700"
 
 const outlineButtonClass =
-  "rounded-lg border border-slate-300 px-6 py-2 text-xs font-medium text-slate-600 transition-colors hover:bg-slate-50";
+  "rounded-lg border border-slate-300 px-6 py-2 text-xs font-medium text-slate-600 transition-colors hover:bg-slate-50"
 
 const DetailItem = ({ label, value }: { label: string; value: string }) => (
   <div className="grid grid-cols-[minmax(135px,1fr)_minmax(0,2fr)] gap-3 text-xs text-[#6B7280]">
     <span>{label}</span>
     <span className="font-medium text-slate-700">{value}</span>
   </div>
-);
+)
 
 const TDSReportPage = () => {
-  const [isUserLoaded, setIsUserLoaded] = useState(false);
-  const [username, setUsername] = useState("");
+  const [isUserLoaded, setIsUserLoaded] = useState(false)
+  const [username, setUsername] = useState("")
 
   // Change Status form state
-  const [orderStatus, setOrderStatus] = useState("Pending");
-  const [remark, setRemark] = useState("");
+  const [orderStatus, setOrderStatus] = useState("Pending")
+  const [remark, setRemark] = useState("")
 
   // Table state
-  const [search, setSearch] = useState("");
-  const [rowsPerPage, setRowsPerPage] = useState(5);
-  const [selectedRows, setSelectedRows] = useState<string[]>([]);
+  const [search, setSearch] = useState("")
+  const [rowsPerPage, setRowsPerPage] = useState(5)
+  const [selectedRows, setSelectedRows] = useState<string[]>([])
 
   const filteredRows = useMemo(() => {
-    const term = search.trim().toLowerCase();
+    const term = search.trim().toLowerCase()
     const base = term
       ? tdsRows.filter(
           (row) =>
             row.cutOff.toLowerCase().includes(term) ||
             row.date.toLowerCase().includes(term)
         )
-      : tdsRows;
-    return base.slice(0, rowsPerPage);
-  }, [search, rowsPerPage]);
+      : tdsRows
+    return base.slice(0, rowsPerPage)
+  }, [search, rowsPerPage])
 
-  const shownCount = filteredRows.length;
+  const shownCount = filteredRows.length
 
   const allSelected =
     filteredRows.length > 0 &&
-    filteredRows.every((row) => selectedRows.includes(row.id));
+    filteredRows.every((row) => selectedRows.includes(row.id))
 
   const toggleRow = (id: string) => {
     setSelectedRows((prev) =>
       prev.includes(id) ? prev.filter((r) => r !== id) : [...prev, id]
-    );
-  };
+    )
+  }
 
   const toggleAll = () => {
-    setSelectedRows(allSelected ? [] : filteredRows.map((row) => row.id));
-  };
+    setSelectedRows(allSelected ? [] : filteredRows.map((row) => row.id))
+  }
 
   const handleExport = () => {
     const header = [
@@ -126,30 +126,30 @@ const TDSReportPage = () => {
       "Total Income",
       "TDS Rate (%)",
       "TDS Amount (Rs.)",
-    ];
+    ]
     const rows = tdsRows.map((row) => [
       row.cutOff,
       row.date,
       row.totalIncome,
       row.tdsRate,
       row.tdsAmount,
-    ]);
+    ])
     const csvContent = [header, ...rows]
       .map((r) => r.map((cell) => `"${cell}"`).join(","))
-      .join("\n");
+      .join("\n")
 
-    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = "tds-report.csv";
-    link.click();
-    URL.revokeObjectURL(url);
-  };
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" })
+    const url = URL.createObjectURL(blob)
+    const link = document.createElement("a")
+    link.href = url
+    link.download = "tds-report.csv"
+    link.click()
+    URL.revokeObjectURL(url)
+  }
 
   const handleSearchSubmit = () => {
-    setIsUserLoaded(true);
-  };
+    setIsUserLoaded(true)
+  }
 
   return (
     <div className="space-y-4">
@@ -175,7 +175,7 @@ const TDSReportPage = () => {
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               placeholder="Enter username"
-              className="w-full rounded-lg border border-slate-200 bg-white px-3.5 py-2.5 text-xs text-slate-700 outline-none transition-colors placeholder:text-slate-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
+              className="w-full rounded-lg border border-slate-200 bg-white px-3.5 py-2.5 text-xs text-slate-700 transition-colors outline-none placeholder:text-slate-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
             />
             <button
               type="button"
@@ -302,7 +302,7 @@ const TDSReportPage = () => {
                 </thead>
                 <tbody>
                   {filteredRows.map((row, index) => {
-                    const isSelected = selectedRows.includes(row.id);
+                    const isSelected = selectedRows.includes(row.id)
                     return (
                       <tr
                         key={row.id}
@@ -328,7 +328,7 @@ const TDSReportPage = () => {
                           {row.tdsAmount}
                         </td>
                       </tr>
-                    );
+                    )
                   })}
                 </tbody>
               </table>
@@ -398,7 +398,7 @@ const TDSReportPage = () => {
                     id="order-status"
                     value={orderStatus}
                     onChange={(e) => setOrderStatus(e.target.value)}
-                    className="w-full appearance-none rounded-lg border border-slate-200 bg-white px-3.5 py-2.5 pr-9 text-xs text-slate-700 outline-none transition-colors focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
+                    className="w-full appearance-none rounded-lg border border-slate-200 bg-white px-3.5 py-2.5 pr-9 text-xs text-slate-700 transition-colors outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
                   >
                     {ORDER_STATUS_OPTIONS.map((option) => (
                       <option key={option} value={option}>
@@ -421,7 +421,7 @@ const TDSReportPage = () => {
                   onChange={(e) => setRemark(e.target.value)}
                   rows={4}
                   placeholder="Remark..."
-                  className="w-full resize-none rounded-lg border border-slate-200 bg-white px-3.5 py-2.5 text-xs text-slate-700 outline-none transition-colors placeholder:text-slate-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
+                  className="w-full resize-none rounded-lg border border-slate-200 bg-white px-3.5 py-2.5 text-xs text-slate-700 transition-colors outline-none placeholder:text-slate-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
                 />
               </div>
             </div>
@@ -439,8 +439,7 @@ const TDSReportPage = () => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default TDSReportPage;
-
+export default TDSReportPage

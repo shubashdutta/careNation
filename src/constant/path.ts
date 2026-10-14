@@ -106,6 +106,12 @@ const Report_PATH = {
   weeklyReport: "/report/weekly",
   incomeAudit: "/report/income-audit",
   tdsReport: "/report/tds",
+  tdsPayout: "/report/tds-payout",
+  misReport: "/report/mis-reports",
+  vatReport: "/report/vat",
+  notPalced: "/report/not-placed",
+
+  payout: "/report/payout",
 }
 
 const FINANCIAL_PATH = {
