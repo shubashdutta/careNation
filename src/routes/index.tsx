@@ -52,7 +52,6 @@ const MainRoutes = [
   },
 
   {
-    // Public routes wrapper: accessible only to unauthenticated users
     element: <PublicRouteWrapper />,
     children: [...publicRoutes],
   },
