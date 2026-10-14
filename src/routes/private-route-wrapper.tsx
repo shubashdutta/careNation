@@ -21,12 +21,10 @@ const PrivateRouteWrapper = ({ children }: { children?: React.ReactNode }) => {
     return <Navigate to={PATH.auth.login} />
   }
 
-  // If user is logged in and tries to access root `/`, redirect them to dashboard
   if (window.location.pathname === "/") {
-    window.location.replace(PATH.dashboard.dashboard)
+    window.location.replace(PATH.auth.login)
   }
 
-  // Render children (protected content) if authenticated
   return <>{children}</>
 }
 

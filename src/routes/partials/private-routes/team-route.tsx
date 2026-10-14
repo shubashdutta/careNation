@@ -13,6 +13,7 @@ import EditKyc from "@/pages/team/kyc-status/edit"
 import ReferralList from "@/pages/team/referral-list"
 import BlockUnblock from "@/pages/team/block-unblock"
 import ChangePassword from "@/pages/team/change-password"
+import MemberLoginPage from "@/pages/team/memberLogin/MemberLoginPage"
 
 export const teamRoutes = [
   {
@@ -66,6 +67,11 @@ export const teamRoutes = [
   {
     path: PATH.team.blockUnblock,
     element: <BlockUnblock />,
+  },
+
+  {
+    path: PATH.team.memberLogin,
+    element: <MemberLoginPage />,
   },
   {
     path: PATH.team.changePassword,
